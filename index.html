@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maths Game</title> 
+    
+</head> 
+    
+    <body> 
+    
+          <center> 
+    
+          <h1 style="font-size: 400%">Maths Game</h1> 
+    
+            <br> 
+    
+            <br> 
+    
+            <br> 
+    
+            <br> 
+    
+            <h2 id="question"></h2> 
+    
+            <input type="text" name="answer" id="answer"> <button onclick="fire()">Enter</button> 
+    
+              <img src="" id="graphic"> 
+    
+          </center> 
+    
+        </body> 
+    
+    <script> 
+    
+     
+    
+     
+    
+    var qanswer; 
+    
+    var uanswer; 
+    
+     
+    
+     
+    
+    function load(){ 
+    
+    var minimum = 1; 
+    
+    var maximum = 100; 
+    
+    var int1 = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum; 
+    
+    var int2 = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum; 
+    
+    document.getElementById('question').innerHTML = int1 + " " + "+" + " " + int2; 
+    
+    qanswer = int1 + int2; 
+    
+    } 
+    
+     
+    
+    load(); 
+    
+      
+    
+     
+    
+      
+    
+        function fire() { 
+    
+    var uanswer = document.getElementById('answer').value; 
+    
+    console.log(uanswer); 
+    
+    console.log(qanswer); 
+    
+          
+    
+     if (uanswer == qanswer) { 
+    
+       
+    
+    //change image source 
+    
+     
+    
+           // document.body.appendChild(document.createElement('img')).src = 'correct.gif'; 
+    
+            
+    
+    document.getElementById("graphic").src="correct.gif";   
+    
+           
+    
+          } else { 
+    
+      
+    
+         //   document.body.appendChild(document.createElement('img')).src = 'wrong.gif'; 
+    
+    document.getElementById("graphic").src="wrong.gif";	  
+    
+          } 
+    
+       
+    
+     load();  
+    
+       
+    
+        } 
+    
+      
+
+    </script> 
+    
+    <style> 
+    
+    body { 
+    
+       font-family: sans-serif; 
+    
+       color: black; 
+    
+      
+    
+    } 
+    
+     
+    
+    img { 
+    
+       display: block; 
+    
+           margin-left: auto; 
+    
+           margin-right: auto; 
+    
+           width: 400px; 
+    
+       height: 300px;  
+    
+        } 
+    
+     
+    
+    #answer{ 
+    
+    width: 250px;  
+    
+    height: 40px;  
+    
+    font-size: 32px; 
+    
+    } 
+    
+     
+    
+    </style> 
+</body>
+</html>
